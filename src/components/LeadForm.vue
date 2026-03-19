@@ -25,7 +25,7 @@ function enviarFormulario() {
 </script>
 
 <template>
-  <form class="space-y-4" @submit.prevent="enviarFormulario">
+  <form class="space-y-5" @submit.prevent="enviarFormulario">
     <div>
       <label class="mb-2 block text-sm font-medium text-slate-700" for="nome">Nome</label>
       <input
@@ -33,7 +33,7 @@ function enviarFormulario() {
         v-model="nome"
         type="text"
         required
-        class="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+        class="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
         placeholder="Seu nome completo"
       />
     </div>
@@ -45,7 +45,7 @@ function enviarFormulario() {
         v-model="email"
         type="email"
         required
-        class="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+        class="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
         placeholder="voce@email.com"
       />
     </div>
@@ -56,32 +56,34 @@ function enviarFormulario() {
         id="bairro"
         v-model="bairro"
         type="text"
-        class="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+        class="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
         placeholder="Ex: Pituba"
       />
     </div>
 
     <div>
-      <label class="mb-2 block text-sm font-medium text-slate-700" for="descricao">Descricao</label>
+      <label class="mb-2 block text-sm font-medium text-slate-700" for="descricao">
+        Descrição
+      </label>
       <textarea
         id="descricao"
         v-model="descricao"
         rows="4"
-        class="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
-        placeholder="Conte um pouco sobre o imovel, metragem, numero de quartos ou diferenciais."
+        class="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
+        placeholder="Conte um pouco sobre o imóvel, metragem, número de quartos ou diferenciais."
       />
     </div>
 
     <button
       type="submit"
-      class="w-full rounded-xl bg-blue-600 px-4 py-3 text-base font-semibold text-white transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-200"
+      class="w-full rounded-2xl bg-blue-600 px-4 py-3 text-base font-semibold text-white transition hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-200"
     >
       Quero saber o valor do meu imóvel
     </button>
 
     <p
       v-if="sucesso"
-      class="rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700"
+      class="rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700"
     >
       Recebemos seus dados com sucesso! Em breve entraremos em contato.
     </p>
