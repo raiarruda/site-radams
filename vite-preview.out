@@ -1,0 +1,14 @@
+
+> radinha@0.0.0 dev
+> vite --host 127.0.0.1 --port 4173
+
+
+  [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m1328[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://127.0.0.1:[1m4173[22m/[39m
+[2m14:16:49[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.vue, /src/style.css[22m
+[2m14:16:52[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.vue, /src/style.css[22m
+[2m14:18:42[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.vue, /src/style.css[22m
+[2m14:19:56[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.vue, /src/style.css[22m
+[2m14:22:09[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.vue, /src/style.css[22m
+[2m14:28:31[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.vue, /src/style.css[22m
