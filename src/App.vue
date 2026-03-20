@@ -4,7 +4,6 @@ import logo from './assets/logo.png'
 
 const form = {
   name: ref(''),
-  mobile: ref(''),
   email: ref(''),
   propertyType: ref(''),
   phone: ref(''),
@@ -120,20 +119,6 @@ function closeTermsModal() {
               </div>
 
               <div>
-                <label class="mb-1 block text-xs font-semibold tracking-[0.02em] text-slate-700" for="mobile">Celular*</label>
-                <input
-                  id="mobile"
-                  :class="fieldClass"
-                  :value="form.mobile.value"
-                  type="tel"
-                  inputmode="numeric"
-                  placeholder="(00) 00000-0000"
-                  required
-                  @input="handlePhoneInput($event, 'mobile')"
-                />
-              </div>
-
-              <div>
                 <label class="mb-1 block text-xs font-semibold tracking-[0.02em] text-slate-700" for="email">E-mail*</label>
                 <input
                   id="email"
@@ -227,12 +212,13 @@ function closeTermsModal() {
               </div>
 
               <div>
-                <label class="mb-1 block text-xs font-semibold tracking-[0.02em] text-slate-700" for="neighborhood">Bairro</label>
+                <label class="mb-1 block text-xs font-semibold tracking-[0.02em] text-slate-700" for="neighborhood">Bairro*</label>
                 <input
                   id="neighborhood"
                   v-model="form.neighborhood.value"
                   :class="fieldClass"
                   type="text"
+                  required
                 />
               </div>
 
