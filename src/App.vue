@@ -12,7 +12,7 @@ import LeadEvaluationForm from './components/LeadEvaluationForm.vue'
       </div>
 
       <footer class="pt-8 text-center text-xs text-[#475569]">
-        © 2025 AIG - Avaliacao de Imoveis Gratuita. Todos os direitos reservados.
+        © 2025 AIG - Avaliação de Imóveis Gratuita. Todos os direitos reservados.
       </footer>
     </div>
   </main>

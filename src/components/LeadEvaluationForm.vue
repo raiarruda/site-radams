@@ -7,10 +7,12 @@ const {
   form,
   isSubmitting,
   isSuccess,
+  submitError,
   isTermsModalOpen,
   handleSubmit,
   openTermsModal,
   closeTermsModal,
+  updateEmail,
   updatePhone,
   updateCep,
 } = useLeadForm()
@@ -21,7 +23,7 @@ const {
     <header
       class="bg-gradient-to-r from-blue-800 to-blue-600 px-6 py-4 text-center text-base font-bold text-white lg:px-8 lg:py-5 lg:text-lg"
     >
-      Comece agora sua avaliacao
+      Comece agora sua avaliação
     </header>
 
     <div class="bg-[#f8fafc] px-5 py-6 sm:px-6 lg:px-8 lg:py-8">
@@ -38,7 +40,14 @@ const {
             <label class="mb-1 block text-xs font-semibold tracking-[0.02em] text-slate-700" for="email">
               E-mail*
             </label>
-            <input id="email" v-model="form.email" :class="fieldClass" type="email" required />
+            <input
+              id="email"
+              :class="fieldClass"
+              :value="form.email"
+              type="email"
+              required
+              @input="updateEmail($event.target.value)"
+            />
           </div>
 
           <div>
@@ -46,7 +55,7 @@ const {
               class="mb-1 block text-xs font-semibold tracking-[0.02em] text-slate-700"
               for="propertyType"
             >
-              Tipo de Imovel*
+              Tipo de Imóvel*
             </label>
             <select id="propertyType" v-model="form.propertyType" :class="fieldClass" required>
               <option disabled value="">Selecione</option>
@@ -76,7 +85,7 @@ const {
 
           <div>
             <label class="mb-1 block text-xs font-semibold tracking-[0.02em] text-slate-700" for="builtArea">
-              Area Construida (m²)*
+              Área Construída (m²)*
             </label>
             <input
               id="builtArea"
@@ -130,14 +139,14 @@ const {
 
           <div>
             <label class="mb-1 block text-xs font-semibold tracking-[0.02em] text-slate-700" for="address">
-              Endereco*
+              Endereço*
             </label>
             <input
               id="address"
               v-model="form.address"
               :class="fieldClass"
               type="text"
-              placeholder="Rua, numero"
+              placeholder="Rua, número"
               required
             />
           </div>
@@ -147,7 +156,7 @@ const {
               class="mb-1 block text-xs font-semibold tracking-[0.02em] text-slate-700"
               for="additionalInfo"
             >
-              Informacoes Complementares
+              Informações Complementares
             </label>
             <textarea
               id="additionalInfo"
@@ -195,11 +204,11 @@ const {
             </svg>
             Enviando...
           </template>
-          <template v-else>QUERO MINHA AVALIACAO GRATUITA</template>
+          <template v-else>QUERO MINHA AVALIAÇÃO GRATUITA</template>
         </button>
 
         <p class="text-center text-xs font-medium text-slate-500">
-          Seus dados estao 100% seguros e protegidos de acordo com a LGPD.
+          Seus dados estão 100% seguros e protegidos de acordo com a LGPD.
         </p>
 
         <div
@@ -218,7 +227,14 @@ const {
               clip-rule="evenodd"
             />
           </svg>
-          <p>Solicitacao enviada com sucesso! Nossa equipe entrara em contato em breve.</p>
+          <p>Solicitação enviada com sucesso! Nossa equipe entrará em contato em breve.</p>
+        </div>
+
+        <div
+          v-if="submitError"
+          class="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-700"
+        >
+          {{ submitError }}
         </div>
       </form>
     </div>
